@@ -1,0 +1,12 @@
+<div>
+    <div class="row" ng-repeat="y in cardsCount">
+        <div class="card" ng-repeat="x in cardsCount" ng-click="clicked(x, y, $event)">
+            <img src="img/0.jpg" alt="card"/>
+        </div>
+        <br/>
+    </div>
+    <div class="cover" ng-class="{visible: mesVisible == true}">
+        <h1>{{message}}</h1>
+        <button ng-click="back()">Back!</button>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Memory Game</title>
+    <meta charset="UTF-8"/>
+    <meta name="author" content="Michał Grabowski"/>
+    <meta name="keywords" content="memory, game, cards, children, play"/>
+    <meta name="description" content="Exercises your child brain while playing."/>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script>
+        var app = angular.module("MemoryApp", ["ngRoute"]);
+
+        var MemoryController = app.controller("memoryController", function ($scope, $location, $interval, $rootScope) {
+            $rootScope.gameOn = false;
+            $scope.getOffTheGame = function () {
+                $rootScope.gameOn = false;
+            }
+        });
+        
+        app.config(function ($routeProvider) {
+            $routeProvider
+            .when("/", {
+                templateUrl: "mode/choice.html",
+                controller: "memoryController"
+            })
+            .when("/30sec", {
+                templateUrl: "mode/30sec.html",
+                controller: "memoryController"
+            })
+            .when("/60sec", {
+                templateUrl: "mode/60sec.html",
+                controller: "memoryController"
+            })
+            .when("/90sec", {
+                templateUrl: "mode/90sec.html",
+                controller: "memoryController"
+            })
+            .otherwise({
+                redirectTo: "/"
+            });
+        });
+    </script>
+
+    <!-- Dyrektywy -->
+    <script src="directives/gamefield/gamefield.js"></script>
+    <script src="directives/time/time.js"></script>
+
+</head>
+<body ng-app="MemoryApp" ng-controller="memoryController">    
+    <div ng-view></div>
+</body>
+</html>

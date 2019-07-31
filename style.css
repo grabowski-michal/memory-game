@@ -1,0 +1,67 @@
+body {
+    width: 960px;
+    margin: 0 auto;
+}
+div[ng-view=""] {
+    margin: 0 auto;
+    text-align: center;
+}
+.usual-case {
+    font-weight: normal;
+    font-variant: small-caps;
+}
+.card {
+    display:inline-block;
+}
+.card img {
+    width:80px;
+}
+#time {
+    width:320px;
+    margin:0 auto;
+    position:relative;
+    padding-bottom:30px;
+}
+.czasik {
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+}
+progress {
+    width:100%;
+    border-radius:10px;
+    position:absolute;
+    left:0;
+    top:0;
+}
+.progressbar[value]::-webkit-progress-value {
+    background-color:silver;
+    border-radius:10px;
+}
+.progressbar[value]::-moz-progress-bar {
+    background-color: silver;
+    border-radius:10px;
+}
+.red[value]::-webkit-progress-value {
+    background-color: indianred;
+}
+.red[value]::-moz-progress-bar {
+    background-color: indianred;
+}
+.cover {
+    background-color:rgba(64, 64, 64, 0.5);
+    position:absolute;
+    left:0;
+    top:0;
+    width:100vw;
+    height:100vh;
+    display:none;
+}
+.visible {
+    display:block;
+}
+h1 {
+    color:black;
+    text-shadow:2px 2px 3px silver;
+    padding-top:50px;
+}
